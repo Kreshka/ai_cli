@@ -1,7 +1,9 @@
 from huggingface_hub import InferenceClient
 import sys
+import os
 
-client = InferenceClient(api_key="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")
+hf_token = os.environ.get("HF_TOKEN")
+client = InferenceClient(api_key=hf_token)
 br = True
 while br:
     sys.stdout.write(": ")
